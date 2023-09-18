@@ -113,6 +113,7 @@
 	}
 
 	function intro3() {
+		canclick = false;
 		let tl = gsap.timeline({
 
 		});
@@ -125,7 +126,9 @@
 		tl.to("#myText", { text: { value: "Mari meneguk waktu sejenak dan membayangkan sketsa masa depan kelak ketika dipimpin oleh generasi anak masa kini.<br/><br>" }, duration: 6, delay: 1, ease: "none" })
 		tl.to("#myText2", {
 			text: { value: "Warna dan rasa yang akan mereka torehkan nanti sangat bergantung pada sikap dan tindakan kita saat ini untuk mereka<br><br>yaitu bagaimana kita menanam investasi kebaikan dan kesiapan dalam raga dan jiwa mereka." }, duration: 10, delay: 1, ease: "none"
-		})
+		}).add(function () {
+			canclick = true
+		});
 
 	}
 
