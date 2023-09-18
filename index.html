@@ -114,6 +114,7 @@
 
 	function intro3() {
 		canclick = false;
+		$('#footer').hide();
 		let tl = gsap.timeline({
 
 		});
@@ -128,6 +129,7 @@
 			text: { value: "Warna dan rasa yang akan mereka torehkan nanti sangat bergantung pada sikap dan tindakan kita saat ini untuk mereka<br><br>yaitu bagaimana kita menanam investasi kebaikan dan kesiapan dalam raga dan jiwa mereka." }, duration: 10, delay: 1, ease: "none"
 		}).add(function () {
 			canclick = true
+			$('#footer').show();
 		});
 
 	}
