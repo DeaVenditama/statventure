@@ -44,6 +44,9 @@
                 <h1>Tentu saja, perjuangan masih terus berlanjut. Jadi, kira-kira apa yang menjadi pesanmu untuk pembaca
                     kita? </h1>
             </div>
+            <div id="footer">
+                <div id="footernext" class="text-primary">Click anywhere to next</div>
+            </div>
         </section>
     </div>
 </body>
@@ -58,83 +61,109 @@
 <script src="./gsap-textplugin.js"></script>
 <script>
 
-    gsap.to('.img_urban_rural', {
-        opacity: 1,
-        duration: 1
-    })
-    gsap.to('.car1', {
-        x: 2000,
-        duration: 30,
-        repeat: -1,
-    }, 1);
+    let clickIndex = 0;
 
-    gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
-        opacity: 1,
-        duration: 1,
+    $('body').click((event) => {
+        clickIndex++;
+        console.log(clickIndex);
+        if (clickIndex == 1) {
+            scene1();
+        } else if (clickIndex == 2) {
+            scene2();
+        } else if (clickIndex == 3) {
+            scene3();
+        } else if (clickIndex == 4) {
+            scene4();
+        }
     });
+    intro();
+    function intro() {
+        gsap.to('.img_urban_rural', {
+            opacity: 1,
+            duration: 0.3
+        })
+        gsap.to('.car1', {
+            x: 2000,
+            duration: 30,
+            repeat: -1,
+        }, 0.3);
 
-    gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4'], {
-        x: 100, repeat: -1, duration: 5, yoyo: true
-    }, 0.5);
+        gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
+            opacity: 1,
+            duration: 0.3,
+        });
 
-    gsap.to(['cloud5', '.cloud6', '.cloud7'], {
-        x: 100, repeat: -1, duration: 5, yoyo: true
-    }, 0.5);
+        gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4'], {
+            x: 100, repeat: -1, duration: 5, yoyo: true
+        }, 0.3);
 
-    gsap.to('.car5', {
-        x: -2000,
-        duration: 30,
-        repeat: -1,
-    }, 1);
+        gsap.to(['cloud5', '.cloud6', '.cloud7'], {
+            x: 100, repeat: -1, duration: 5, yoyo: true
+        }, 0.3);
 
-    gsap.to('.visca1', {
-        x: -500,
-        duration: 1,
-    }, 1)
+        gsap.to('.car5', {
+            x: -2000,
+            duration: 30,
+            repeat: -1,
+        }, 0.3);
 
-    gsap.to('.visco1', {
-        x: 600,
-        duration: 1,
-    }, 1)
+        gsap.to('.visca1', {
+            x: -500,
+            duration: 1,
+        }, 0.3)
 
-    gsap.to(['.callout2', '.text_ending_1'], {
-        opacity: 1,
-        duration: 1
-    }, 2);
+        gsap.to('.visco1', {
+            x: 600,
+            duration: 1,
+        }, 0.3)
+    }
+    function scene1() {
+        gsap.to(['.callout2', '.text_ending_1'], {
+            opacity: 1,
+            duration: 0.3
+        });
+    }
+    function scene2() {
+        let tl = gsap.timeline({
 
-    gsap.to(['.text_ending_1'], {
-        opacity: 0,
-        duration: 1
-    }, 8);
+        })
+        tl.to(['.text_ending_1'], {
+            opacity: 0,
+            duration: 0.3
+        });
 
+        tl.to(['.text_ending_2'], {
+            opacity: 1,
+            duration: 0.3
+        });
+    }
+    function scene3() {
+        let tl = gsap.timeline({
 
-    gsap.to(['.text_ending_2'], {
-        opacity: 1,
-        duration: 1
-    }, 9);
+        })
+        tl.to(['.callout2', '.text_ending_2'], {
+            opacity: 0,
+            duration: 0.3
+        });
 
-    gsap.to(['.callout2', '.text_ending_2'], {
-        opacity: 0,
-        duration: 1
-    }, 15);
+        tl.to(['.callout1', '.text_ending_3'], {
+            opacity: 1,
+            duration: 0.5
+        });
+    }
+    function scene4() {
+        let tl = gsap.timeline({
 
-    gsap.to(['.callout1', '.text_ending_3'], {
-        opacity: 1,
-        duration: 1
-    }, 15);
+        });
+        tl.to(['.img_urban_rural', '.callout1', '.text_ending_3', '.visca1', '.visco1', '.car1', '.car5', '.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
+            opacity: 0,
+            duration: 1
+        })
 
-    gsap.to(['.img_urban_rural', '.callout1', '.text_ending_3', '.visca1', '.visco1', '.car1', '.car5', '.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
-        opacity: 0,
-        duration: 1
-    }, 19)
-
-    let tl = gsap.timeline({
-
-    });
-
-    tl.add(function () {
-        location.href = "ending.html"
-    }, 20)
+        tl.add(function () {
+            location.href = "ending.html"
+        })
+    }
 
 </script>
 

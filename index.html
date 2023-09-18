@@ -33,6 +33,9 @@
 				<h1 id="myText" style="padding-top:15%"></h1>
 				<h1 id="myText2"></h1>
 			</div>
+			<div id="footer">
+				<div id="footernext" class="text-primary">Click anywhere to next</div>
+			</div>
 		</section>
 	</div>
 </body>
@@ -48,54 +51,100 @@
 <script>
 	gsap.registerPlugin(TextPlugin);
 
-	let tl = gsap.timeline({
-	})
-	tl.to(".container", {
-		backgroundColor: 'black',
-		duration: 1,
+	let clickIndex = 0;
+	let canclick = false;
+	$('body').click((event) => {
+		if (canclick) {
+			clickIndex++;
+			console.log(clickIndex);
+			if (clickIndex == 1) {
+				intro2();
+			} else if (clickIndex == 2) {
+				intro3();
+			} else if (clickIndex == 3) {
+				intro4();
+			}
+		} else {
+			console.log("click event not started");
+		}
 	});
 
-	tl.to(".start_text", {
-		opacity: 1,
-		duration: 1,
-	});
+	intro1();
 
-	tl.to(".start_text", {
-		opacity: 0,
-		duration: 1,
-		delay: 2,
-	});
+	function intro1() {
+		let tl = gsap.timeline({
+		})
+		tl.to(".container", {
+			backgroundColor: 'black',
+			duration: 1,
+		});
 
-	tl.call(removeElement('.start_text'));
+		tl.to(".start_text", {
+			opacity: 1,
+			duration: 1,
+		}).add(function () {
+			canclick = true;
+		});
+	}
 
-	tl.to(".container", {
-		backgroundColor: 'white',
-		duration: 1,
-	});
+	function intro2() {
+		canclick = false;
+		let tl = gsap.timeline({
 
-	tl.to(".tulisan_john", {
-		opacity: 1,
-		duration: 3,
-	});
-	tl.to(".tulisan_john", {
-		opacity: 0,
-		duration: 1,
-	});
-	tl.call(removeElement('.tulisan_john'));
+		});
+		tl.to(".start_text", {
+			opacity: 0,
+			duration: 1,
+		});
 
-	tl.to("#myText", { text: { value: "Mari meneguk waktu sejenak dan membayangkan sketsa masa depan kelak ketika dipimpin oleh generasi anak masa kini.<br/><br>" }, duration: 6, delay: 1, ease: "none" })
-	tl.to("#myText2", {
-		text: { value: "Warna dan rasa yang akan mereka torehkan nanti sangat bergantung pada sikap dan tindakan kita saat ini untuk mereka<br><br>yaitu bagaimana kita menanam investasi kebaikan dan kesiapan dalam raga dan jiwa mereka." }, duration: 10, delay: 1, ease: "none"
-	})
+		tl.call(removeElement('.start_text'));
 
-	tl.to(".tulisan_john", {
-		opacity: 0,
-		duration: 3,
-	});
+		tl.to(".container", {
+			backgroundColor: 'white',
+			duration: 1,
+		});
 
-	tl.add(function () {
-		location.href = "perkenalan.html";
-	});
+		tl.to(".tulisan_john", {
+			opacity: 1,
+			duration: 1,
+		}).add(function () {
+			canclick = true;
+		});;
+	}
+
+	function intro3() {
+		let tl = gsap.timeline({
+
+		});
+		tl.to(".tulisan_john", {
+			opacity: 0,
+			duration: 1,
+		});
+		tl.call(removeElement('.tulisan_john'));
+
+		tl.to("#myText", { text: { value: "Mari meneguk waktu sejenak dan membayangkan sketsa masa depan kelak ketika dipimpin oleh generasi anak masa kini.<br/><br>" }, duration: 6, delay: 1, ease: "none" })
+		tl.to("#myText2", {
+			text: { value: "Warna dan rasa yang akan mereka torehkan nanti sangat bergantung pada sikap dan tindakan kita saat ini untuk mereka<br><br>yaitu bagaimana kita menanam investasi kebaikan dan kesiapan dalam raga dan jiwa mereka." }, duration: 10, delay: 1, ease: "none"
+		})
+
+	}
+
+
+	function intro4() {
+		let tl = gsap.timeline({
+
+		});
+		tl.to(".tulisan_john", {
+			opacity: 0,
+			duration: 3,
+		});
+		tl.add(function () {
+			location.href = "perkenalan.html";
+		});
+	}
+
+
+
 
 	//reusable function
 	function removeElement(element) {

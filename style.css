@@ -18,6 +18,21 @@ body {
 
 }
 
+#footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-right: 25px;
+    background-color: white;
+    padding: 2px;
+}
+
+#footerback,
+#footernext {
+    text-align: center;
+    float: right;
+}
+
 .panel {
     scroll-snap-align: start;
     height: 100vh;

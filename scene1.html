@@ -91,7 +91,9 @@
                 <h1>Lebih luas dari sekadar gangguan pertumbuhan tentunya. Ayo cari tahu dengan data!</h1>
                 <h4 class="text-end pe-5 me-5"><a href="scene3.html">Selanjutnya</a></h4>
             </div>
-
+            <div id="footer">
+                <div id="footernext" class="text-primary">Click anywhere to next</div>
+            </div>
         </section>
     </div>
 </body>
@@ -106,149 +108,277 @@
 <script src="./gsap-textplugin.js"></script>
 <script>
 
-    let tl = gsap.timeline({
+    let clickIndex = 0;
+    let canclick = false;
+    $('body').click((event) => {
+        if (canclick) {
+            clickIndex++;
+            console.log(clickIndex);
+            if (clickIndex == 1) {
+                lirik1();
+            }
+            if (clickIndex == 2) {
+                lirik2();
+            } else if (clickIndex == 3) {
+                lirik3();
+            } else if (clickIndex == 4) {
+                lirik4();
+            }
+            else if (clickIndex == 5) {
+                clear_lirik();
+            }
+            else if (clickIndex == 6) {
+                lirik5();
+            }
+            else if (clickIndex == 7) {
+                lirik6();
+            }
+            else if (clickIndex == 8) {
+                lirik7();
+            }
+            else if (clickIndex == 9) {
+                lirik8();
+            }
+            else if (clickIndex == 10) {
+                clear_lirik2();
+            } else if (clickIndex == 11) {
+                show_vivo();
+            }
+            else if (clickIndex == 12) {
+                talk2();
+            }
+            else if (clickIndex == 13) {
+                talk3();
+            }
+            else if (clickIndex == 14) {
+                talk4();
+            } else if (clickIndex == 15) {
+                talk5();
+            }
+        } else {
+            console.log('click event not available');
+        }
 
-    })
-    tl.to(".img_tv", {
-        opacity: 1,
-        duration: 3,
     });
 
-    tl.to("#tv", {
-        opacity: 1,
-        duration: 3,
-    }, 0)
+    lirik0();
 
-    tl.to("#lirik1", {
-        opacity: 1,
-        duration: 0.5,
-    });
+    function lirik0() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to("#lirik2", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+        })
+        tl.to(".img_tv", {
+            opacity: 1,
+            duration: 1,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function lirik1() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to("#lirik3", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+        })
+        tl.to("#lirik1", {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function lirik2() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to("#lirik4", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+        })
+        tl.to("#lirik2", {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function lirik3() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to(["#lirik1", "#lirik2", "#lirik3", "#lirik4"], {
-        opacity: 0,
-        duration: 1,
-        delay: 1
-    });
+        })
+        tl.to("#lirik3", {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function lirik4() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to("#lirik5", {
-        opacity: 1,
-        duration: 0.5,
-    });
+        })
 
-    tl.to("#lirik6", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+        tl.to("#lirik4", {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function clear_lirik() {
+        canclick = false;
+        gsap.to(["#lirik1", "#lirik2", "#lirik3", "#lirik4"], {
+            opacity: 0,
+            duration: 0.3,
+        });
+        canclick = true;
 
-    tl.to("#lirik7", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+    }
 
-    tl.to("#lirik8", {
-        opacity: 1,
-        duration: 1,
-        delay: 0.5,
-    });
+    function lirik5() {
+        canclick = false;
+        gsap.to("#lirik5", {
+            opacity: 1,
+            duration: 0.3,
+        });
+        canclick = true;
 
-    tl.to(["#lirik5", "#lirik6", "#lirik7", "#lirik8"], {
-        opacity: 0,
-        duration: 1,
-        delay: 1
-    });
+    }
+    function lirik6() {
+        canclick = false;
+        gsap.to("#lirik6", {
+            opacity: 1,
+            duration: 0.3,
+        });
+        canclick = true;
 
-    tl.to(['.img_tv', '#tv'], {
-        opacity: 0,
-        duration: 1,
-    }).add(function () {
-        document.getElementById('img_tv').src = "image/bg-city.jpg";
-    });
+    }
+    function lirik7() {
+        canclick = false;
+        gsap.to("#lirik7", {
+            opacity: 1,
+            duration: 0.3,
+        })
+        canclick = true;
 
-    tl.to(['#visco3', '#visca3', '.img_tv'], {
-        opacity: 1,
-        duration: 1,
-    });
+    }
+    function lirik8() {
+        canclick = false;
+        gsap.to("#lirik8", {
+            opacity: 1,
+            duration: 0.3,
+        })
+        canclick = true;
 
-    tl.to(['#scene_1_text_callout', '#scene_1_callout'], {
-        opacity: 1,
-        duration: 1
-    });
+    }
+    function clear_lirik2() {
+        canclick = false;
+        gsap.to(["#lirik5", "#lirik6", "#lirik7", "#lirik8"], {
+            opacity: 0,
+            duration: 0.3,
+        });
+        canclick = true;
+    }
+    function show_vivo() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to(['#visca3'], {
-        opacity: 0,
-        duration: 1
-    });
+        })
 
-    tl.to(['#visca4'], {
-        opacity: 1,
-        duration: 1
-    }, "<");
+        tl.to(['.img_tv', '#tv'], {
+            opacity: 0,
+            duration: 0.3,
+        }).add(function () {
+            document.getElementById('img_tv').src = "image/bg-city.jpg";
+        });
 
-    tl.to(['#scene_1_text_callout', '#scene_1_callout'], {
-        opacity: 0,
-        duration: 1,
-        delay: 2
-    });
+        tl.to(['#visco3', '#visca3', '.img_tv'], {
+            opacity: 1,
+            duration: 0.3,
+        });
 
-    tl.to(['#scene_1_callout_2', '#scene_1_text_callout_2'], {
-        opacity: 1,
-        duration: 1
-    });
+        tl.to(['#scene_1_text_callout', '#scene_1_callout'], {
+            opacity: 1,
+            duration: 0.3,
+        });
 
-    tl.to(['#scene_1_callout_2', '#scene_1_text_callout_2'], {
-        opacity: 0,
-        duration: 1,
-        delay: 2
-    });
+        tl.to(['#visca3'], {
+            opacity: 0,
+            duration: 0
+        });
+        tl.to(['#visca4'], {
+            opacity: 1,
+            duration: 0
+        }, "<").add(function () {
+            canclick = true;
+        });
+    }
 
-    tl.to(['#scene_1_text_callout_3', '#scene_1_callout_3'], {
-        opacity: 1,
-        duration: 1
-    });
+    function talk2() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to(['#scene_1_text_callout_3', '#scene_1_callout_3'], {
-        opacity: 0,
-        duration: 1,
-        delay: 5
-    });
+        })
 
-    tl.to(['#scene_1_callout_4', '#scene_1_text_callout_4'], {
-        opacity: 1,
-        duration: 1
-    });
+        tl.to(['#scene_1_text_callout', '#scene_1_callout'], {
+            opacity: 0,
+            duration: 0.3,
+        });
 
-    tl.to(['#scene_1_callout_4', '#scene_1_text_callout_4'], {
-        opacity: 0,
-        duration: 1,
-        delay: 4
-    });
+        tl.to(['#scene_1_callout_2', '#scene_1_text_callout_2'], {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function talk3() {
+        canclick = false;
+        let tl = gsap.timeline({
 
-    tl.to(['#scene_1_callout_5', '#scene_1_text_callout_5'], {
-        opacity: 1,
-        duration: 1
-    });
+        })
+        tl.to(['#scene_1_callout_2', '#scene_1_text_callout_2'], {
+            opacity: 0,
+            duration: 0.3,
+        });
+        tl.to(['#scene_1_text_callout_3', '#scene_1_callout_3'], {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+    function talk4() {
+        canclick = false;
+        let tl = gsap.timeline({
 
+        })
 
+        tl.to(['#scene_1_text_callout_3', '#scene_1_callout_3'], {
+            opacity: 0,
+            duration: 0.3,
+        });
+
+        tl.to(['#scene_1_callout_4', '#scene_1_text_callout_4'], {
+            opacity: 1,
+            duration: 0.3,
+        }).add(function () {
+            canclick = true;
+        });
+    }
+
+    function talk5() {
+        let tl = gsap.timeline({
+
+        })
+        tl.to(['#scene_1_callout_4', '#scene_1_text_callout_4'], {
+            opacity: 0,
+            duration: 0.3,
+        });
+        tl.to(['#scene_1_callout_5', '#scene_1_text_callout_5'], {
+            opacity: 1,
+            duration: 0.3,
+        });
+    }
 </script>
 
 
