@@ -168,7 +168,9 @@ a:focus {
   width: 100%;
   height: auto;
   position: relative;
-
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 #dimensikesehatan {
@@ -221,7 +223,9 @@ a:focus {
   width: 100%;
   height: auto;
   position: relative;
-
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 @media (min-height: 830px) {

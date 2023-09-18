@@ -249,8 +249,8 @@ body {
 .tv {
     position: absolute;
     left: 45%;
-    top: 150px;
-    width: 13%;
+    top: 22%;
+    width: 14%;
     border-radius: 50% / 10%;
     transform: skew(-1deg, 0deg);
     opacity: 0
