@@ -16,6 +16,11 @@
 <body>
 	<div class="container">
 		<section class="scene panel first">
+			<div class="start_text text-center" style="opacity: 0;">
+				<h1 style="padding-top: 20%;font-size: 4rem; " class="text-white"> STATVENTURE</h1>
+				<h1 class="text-white">Menjelajah Zona
+					Penanganan Stunting di Indonesia </h1>
+			</div>
 			<div class="tulisan_john text-center" style="opacity: 0;">
 				<h1 style="padding-top: 25%;"> “Children are the living messages we send to a time
 					we
@@ -45,6 +50,29 @@
 
 	let tl = gsap.timeline({
 	})
+	tl.to(".container", {
+		backgroundColor: 'black',
+		duration: 1,
+	});
+
+	tl.to(".start_text", {
+		opacity: 1,
+		duration: 1,
+	});
+
+	tl.to(".start_text", {
+		opacity: 0,
+		duration: 1,
+		delay: 2,
+	});
+
+	tl.call(removeElement('.start_text'));
+
+	tl.to(".container", {
+		backgroundColor: 'white',
+		duration: 1,
+	});
+
 	tl.to(".tulisan_john", {
 		opacity: 1,
 		duration: 3,
