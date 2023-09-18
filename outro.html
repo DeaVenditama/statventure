@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.1/css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <section class="scene panel first">
+            <img class="img_full img_urban_rural" src="image/urban_rural.jpg" style="opacity: 0;" />
+            <img src="image/car1.png" class="car1" />
+            <img src="image/car5.png" class="car5" />
+            <img src="image/cloud2.png" class="cloud1" />
+            <img src="image/cloud2.png" class="cloud2" />
+            <img src="image/cloud2.png" class="cloud3" />
+            <img src="image/cloud2.png" class="cloud4" />
+            <img src="image/cloud3.png" class="cloud5" />
+            <img src="image/cloud3.png" class="cloud6" />
+            <img src="image/cloud3.png" class="cloud7" />
+            <img src="image/visca1.png" class="visca1" id="visca1" />
+            <img src="image/visco1.png" class="visco1" id="visco1" />
+
+            <img src="image/callout3.png" class="callout2" style="width: 1000px; margin-left:-300px">
+            <div class="text_ending_1" id="text_ending_1">
+                <h1>Ternyata, seperti itu ya capaian penanganan stunting di Indonesia sesuai data terakhir yang telah
+                    dirilis. </h1>
+            </div>
+            <div class="text_ending_2" id="text_ending_2">
+                <h1>Hasilnya sudah baik, namun kita masih harus terus berjuang untuk mencapai apa yang ditargetkan bagi
+                    Indonesia. </h1>
+            </div>
+
+            <img src="image/callout1.png" class="callout1" />
+            <div class="text_ending_3">
+                <h1>Tentu saja, perjuangan masih terus berlanjut. Jadi, kira-kira apa yang menjadi pesanmu untuk pembaca
+                    kita? </h1>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="./bootstrap-5.3.1/js/bootstrap.min.js"></script>
+<script src="./gsap.js"></script>
+<script src="./gsap-scrolltrigger.js"></script>
+<script src="./gsap-textplugin.js"></script>
+<script>
+
+    gsap.to('.img_urban_rural', {
+        opacity: 1,
+        duration: 1
+    })
+    gsap.to('.car1', {
+        x: 2000,
+        duration: 30,
+        repeat: -1,
+    }, 1);
+
+    gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
+        opacity: 1,
+        duration: 1,
+    });
+
+    gsap.to(['.cloud1', '.cloud2', '.cloud3', '.cloud4'], {
+        x: 100, repeat: -1, duration: 5, yoyo: true
+    }, 0.5);
+
+    gsap.to(['cloud5', '.cloud6', '.cloud7'], {
+        x: 100, repeat: -1, duration: 5, yoyo: true
+    }, 0.5);
+
+    gsap.to('.car5', {
+        x: -2000,
+        duration: 30,
+        repeat: -1,
+    }, 1);
+
+    gsap.to('.visca1', {
+        x: -500,
+        duration: 1,
+    }, 1)
+
+    gsap.to('.visco1', {
+        x: 600,
+        duration: 1,
+    }, 1)
+
+    gsap.to(['.callout2', '.text_ending_1'], {
+        opacity: 1,
+        duration: 1
+    }, 2);
+
+    gsap.to(['.text_ending_1'], {
+        opacity: 0,
+        duration: 1
+    }, 8);
+
+
+    gsap.to(['.text_ending_2'], {
+        opacity: 1,
+        duration: 1
+    }, 9);
+
+    gsap.to(['.callout2', '.text_ending_2'], {
+        opacity: 0,
+        duration: 1
+    }, 15);
+
+    gsap.to(['.callout1', '.text_ending_3'], {
+        opacity: 1,
+        duration: 1
+    }, 15);
+
+    gsap.to(['.img_urban_rural', '.callout1', '.text_ending_3', '.visca1', '.visco1', '.car1', '.car5', '.cloud1', '.cloud2', '.cloud3', '.cloud4', 'cloud5', '.cloud6', '.cloud7'], {
+        opacity: 0,
+        duration: 1
+    }, 19)
+
+    let tl = gsap.timeline({
+
+    });
+
+    tl.add(function () {
+        location.href = "ending.html"
+    }, 20)
+
+</script>
+
+
+</html>
