@@ -173,6 +173,31 @@ a:focus {
   background-size: cover;
 }
 
+#ikps {
+  background-image: url(../../image/par1.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+#ikps2 {
+  background-image: url(../../image/par2.jpg);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+
 #dimensikesehatan {
   background-image: url(../../image/dimensikesehatan.jpg);
   background-repeat: no-repeat;
@@ -213,6 +238,30 @@ a:focus {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+
+}
+
+#dimensipangan3 {
+  background-image: url(../../image/bg-scenery1.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+
+#scene11par {
+  /* background-image: url(../../image/par3.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; */
 
 }
 
